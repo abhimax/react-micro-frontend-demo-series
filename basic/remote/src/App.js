@@ -2,7 +2,7 @@ import React from 'react';
 
 const App = () => {
     return <div className='container'>
-        <h1>This is Remote MF</h1>
+        <h3>This is Remote MF</h3>
     </div>
 }
 export default App;

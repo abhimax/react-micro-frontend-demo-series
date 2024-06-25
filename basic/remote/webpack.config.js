@@ -1,5 +1,13 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin"); 
 const path = require("path");
+const {ModuleFederationPlugin} = require("webpack").container;
+const mfObject = new ModuleFederationPlugin({
+    name: "mfRemote",
+    filename: "remoteEntry.js",
+    exposes:{
+      "./MFRemoteApp" : "./src/App"
+    }
+  })
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: "./public/index.html",
@@ -25,6 +33,7 @@ module.exports = {
     ]
   },
   plugins: [
-    htmlPlugin 
+    htmlPlugin,
+    mfObject
   ]
 };
