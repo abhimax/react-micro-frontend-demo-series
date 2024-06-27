@@ -5,7 +5,8 @@ const mfObject = new ModuleFederationPlugin({
     name: "mfRemote",
     filename: "remoteEntry.js",
     exposes:{
-      "./MFRemoteApp" : "./src/App"
+      "./MFRemoteApp" : "./src/App",
+      "./MFRemoteButton" : "./src/Button"
     }
   })
 
