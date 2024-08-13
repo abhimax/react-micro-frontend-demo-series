@@ -8,10 +8,10 @@ module.exports = {
   webpack: {
     plugins: [
       new ModuleFederationPlugin({
-        name: "app1",
+        name: "mfRemote",
         filename: "remoteEntry.js",
         exposes: {
-          "./App1": "./src/App",
+          "./Button": "./src/components/Button",
         },
         shared: ["react", "react-dom"],
       }),
