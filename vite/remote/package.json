@@ -4,10 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "dev": "vite --port 5001 --strictPort",
+    "build": "vite build",
+    "preview": "vite preview --port 5001 --strictPort",
+    "serve": "vite preview --port 5001 --strictPort",
+    "start-mf": "npm run build && npm run preview"
   },
   "dependencies": {
     "react": "^18.3.1",
