@@ -1,12 +1,12 @@
-import React from 'react';
-const MFRemoteApp = React.lazy(() => import("MFRemote/MFRemoteApp"))
-const MFRemoteButton = React.lazy(() => import("MFRemote/MFRemoteButton"))
+import React from "react";
+const MFRemoteButton = React.lazy(() => import("mfRemote/Button"));
 
 const App = () => {
-    return <div className='container'>
-        <h1>This is Host MF</h1>
-        <MFRemoteApp/>
-        <MFRemoteButton>This Button Comes from Remote MF</MFRemoteButton>
+  return (
+    <div className="container">
+      <h1>Host MF</h1>
+      <MFRemoteButton>From Remote MF</MFRemoteButton>
     </div>
-}
+  );
+};
 export default App;

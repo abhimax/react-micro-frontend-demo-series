@@ -1,10 +1,10 @@
-import React from 'react';
-import Button from './Button';
+import React from "react";
 
 const App = () => {
-    return <div className='container'>
-        <h3>This is Remote MF</h3>
-        <Button>This button in Remote MF</Button>
-    </div>
-}
+  return (
+    <>
+      <h1>Remote MF</h1>
+    </>
+  );
+};
 export default App;
