@@ -1,19 +1,16 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-import './index.css'
+import "./index.css";
 
 const App = () => (
-  <div className="container">
-    <div>Name: remote</div>
-    <div>Framework: react</div>
-    <div>Language: TypeScript</div>
-    <div>CSS: Empty CSS</div>
-  </div>
-)
-const rootElement = document.getElementById('app')
-if (!rootElement) throw new Error('Failed to find the root element')
+  <>
+    <h1>Remote MF</h1>
+  </>
+);
+const rootElement = document.getElementById("app");
+if (!rootElement) throw new Error("Failed to find the root element");
 
-const root = ReactDOM.createRoot(rootElement as HTMLElement)
+const root = ReactDOM.createRoot(rootElement as HTMLElement);
 
-root.render(<App />)
+root.render(<App />);
