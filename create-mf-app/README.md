@@ -1,7 +1,6 @@
+# Micro Frontend - create-mf-app
 
-# Micro Frontend Monorepo
-
-This monorepo contains two micro frontend applications created using `create-mf-app`. These applications demonstrate how to use Webpack Module Federation to share components between separate micro frontends. 
+This monorepo contains two micro frontend applications created using `create-mf-app` https://github.com/jherr/create-mf-app. These applications demonstrate how to use Webpack Module Federation to share components between separate micro frontends.
 
 ## Project Structure
 
@@ -11,14 +10,16 @@ This monorepo contains two micro frontend applications created using `create-mf-
 ## Overview
 
 ### 1. **Remote App**
-   - **Description**: The remote app contains a simple button component. This component is exposed as a micro frontend using Webpack Module Federation.
-   - **Technology**: Built with React, Webpack, and Module Federation.
-   - **Purpose**: To provide reusable components that can be integrated into other applications.
+
+- **Description**: The remote app contains a simple button component. This component is exposed as a micro frontend using Webpack Module Federation.
+- **Technology**: Built with React, Webpack, and Module Federation.
+- **Purpose**: To provide reusable components that can be integrated into other applications.
 
 ### 2. **Host App**
-   - **Description**: The host app consumes the button component exposed by the remote app. It integrates this component directly into its user interface.
-   - **Technology**: Built with React, Webpack, and Module Federation.
-   - **Purpose**: To demonstrate how to consume components from a remote micro frontend.
+
+- **Description**: The host app consumes the button component exposed by the remote app. It integrates this component directly into its user interface.
+- **Technology**: Built with React, Webpack, and Module Federation.
+- **Purpose**: To demonstrate how to consume components from a remote micro frontend.
 
 ## Getting Started
 
@@ -30,9 +31,10 @@ This monorepo contains two micro frontend applications created using `create-mf-
 ### Setup
 
 1. **Clone the Repository**:
+
    ```bash
-   git clone <repository-url>
-   cd micro-frontend-monorepo
+   git clone git@github.com:abhimax/react-micro-frontend-demo-series.git
+   cd create-mf-app
    ```
 
 2. **Install Dependencies**:
@@ -40,12 +42,14 @@ This monorepo contains two micro frontend applications created using `create-mf-
    Navigate to each project folder and install the dependencies:
 
    For the host app:
+
    ```bash
    cd host
    npm install
    ```
 
    For the remote app:
+
    ```bash
    cd remote
    npm install
@@ -54,12 +58,14 @@ This monorepo contains two micro frontend applications created using `create-mf-
 3. **Start the Applications**:
 
    Start the remote app first:
+
    ```bash
    cd remote
    npm start
    ```
 
    Then, start the host app:
+
    ```bash
    cd host
    npm start
@@ -73,6 +79,7 @@ This monorepo contains two micro frontend applications created using `create-mf-
 ## How It Works
 
 1. **Remote App**:
+
    - Exposes the button component using Webpack Module Federation.
    - The Webpack configuration specifies the exposed component.
 
@@ -91,4 +98,4 @@ In the host app, the button from the remote app is imported and used within a co
 
 ## Conclusion
 
-This monorepo demonstrates a basic setup of micro frontends using React and Webpack Module Federation. It shows how to expose components in one app and consume them in another, enabling scalable and modular development.
+This repo demonstrates a basic setup of micro frontends using React, Typescript and Webpack Module Federation. It shows how to expose components in one app and consume them in another, enabling scalable and modular development.
