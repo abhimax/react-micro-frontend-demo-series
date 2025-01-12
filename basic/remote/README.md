@@ -67,7 +67,67 @@ Update the `scripts` section of your `package.json` file to include a start comm
 }
 ```
 
+## Convert to Module Federation
+
+### Step 9: Update Webpack Configuration
+
 ## Start the Development Server
+
+### Step 9: Update Webpack Configuration
+
+Modify the `webpack.config.js` file to include Module Federation settings:
+
+```javascript
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+const path = require("path");
+const { ModuleFederationPlugin } = require("webpack").container;
+const mfObject = new ModuleFederationPlugin({
+  name: "mfRemote",
+  filename: "remoteEntry.js",
+  exposes: {
+    "./Button": "./src/Button",
+  },
+});
+
+const htmlPlugin = new HtmlWebPackPlugin({
+  template: "./public/index.html",
+  filename: "./index.html",
+});
+module.exports = {
+  mode: "development",
+  devServer: {
+    static: path.join(__dirname, "dist"),
+    port: 4001,
+    historyApiFallback: {
+      index: "/public/index.html",
+    },
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+        },
+      },
+    ],
+  },
+  plugins: [htmlPlugin, mfObject],
+};
+```
+
+### Step 10: Create a Button Component
+
+Create a `Button.js` file
+
+```javascript
+import React from "react";
+const Button = ({ children }) => {
+  return <button>{children}</button>;
+};
+export default Button;
+```
 
 Run the following command to start your application:
 
