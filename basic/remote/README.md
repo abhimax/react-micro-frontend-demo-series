@@ -136,3 +136,13 @@ npm start
 ```
 
 Your application will be served at `http://localhost:3000`.
+
+## Verify Module Federation
+
+To ensure that Webpack Module Federation is working and your application is exposed as a microfrontend, open the following URL in your browser:
+
+```
+http://localhost:3000/remoteEntry.js
+```
+
+You should see the module federation manifest file load successfully.
